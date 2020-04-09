@@ -1,0 +1,57 @@
+<div class="mobile"  >
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item routerLink="/profile">{{currentUser.displayName}}</button>
+    <button mat-menu-item routerlink="/feed">Feed</button>
+    <button mat-menu-item routerlink="/map">Food Banks</button>
+    <button mat-menu-item routerlink=" /resources">Resources</button>
+    <button mat-menu-item routerlink="/support">support</button>
+    <button mat-menu-item routerlink="/help">help</button>
+    <button mat-menu-item (click)="onLogoutClicked()">sign out</button>
+  </mat-menu>
+
+
+  <button mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>menu</mat-icon>
+  </button>
+</div>
+<div class="banner dark-grey container"></div>
+
+
+<div class="notMobile" fxShow="true" fxHide.gt-sm>
+  <mat-toolbar style="justify-content: space-evenly" class="orange">
+    <span style="justify-self: flex-start;">Buswick Mutual Aid</span>
+    <br>
+    <br>
+    <div class="nav-links">
+      <a routerLink="/profile"><img src='{{currentUser.photoURL}}'
+          style="height:50px; width:50px; border-radius: 50%;"></a>
+      <a routerLink="/profile">{{currentUser.displayName}}</a>
+
+      <a routerLink="/feed">feed</a>
+
+      <a routerLink="/map">Food Banks</a>
+      <a routerLink="/resources">Resources</a>
+
+
+      <a routerLink="/support">support</a>
+      <a (click)="onLogoutClicked()" routerLink=[]>sign out</a>
+      <a routerLink="/help">help</a>
+    </div>
+  </mat-toolbar>
+</div>
+<div class="border-bottom-oj dark-grey">
+  <h2>Please remember the following safety precautions:</h2>
+  <ul class="safety-list" style="list-style-type: none;">
+    <li>The CDC now reccomends wearing a mask when outside.</li>
+    <li>Do not enter a home when you are on a job under any circumstances</li>
+    <li>Check with your person to assess how mobile they are or if they need someone to come to the stoop or landing to
+      meet you</li>
+    <li>Try your best to not to beyond the front door. </li>
+    <li>Do not handle dirty laundry. Clean laundry is ok.</li>
+    <li>Ask your assigned person if they wouldn't mind being contaced every few days to check up.</li>
+    <li>Wash / sanitize your hadns after touching <strong>doorknobs, surfaces frequently when out on a job</strong></li>
+    <li>Try to shop early and avoid crowded shops.</li>
+    <li>Practice social distancing at all times.</li>
+    <li><strong>Use common sense.</strong> We are all figuring this out as we go.</li>
+  </ul>
+</div>

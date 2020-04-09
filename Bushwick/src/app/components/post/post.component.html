@@ -1,0 +1,46 @@
+<form class="help-form grey" [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+  <div>
+    
+    <div>
+      <h3>What do you need done?</h3>
+    </div>
+    
+    <textarea formControlName='text' name="text"  placeholder="Describe what you need"required></textarea>
+    <div *ngIf="inputForm.controls.text.invalid && inputForm.controls.text.errors.required" style="color:red">
+      <p>Description must be 10 characters long </p>
+    </div>
+</div>
+  <div>
+    <h3>when do you need it done</h3>
+ 
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input  matInput [min]="minDate" [matDatepicker]="date" formControlName="date">
+      <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+      <mat-datepicker #date
+      ></mat-datepicker>
+    </mat-form-field>
+    <div *ngIf="inputForm.controls.date.invalid && inputForm.controls.date.errors.required" style="color:red">
+      <p>Please select a date </p>
+    </div>
+  </div>
+  <div>
+    <h3>Where do you need this done?</h3>
+
+    <textarea formControlName='location' placeholder="Enter your address"></textarea>
+    <div *ngIf="inputForm.controls.location.invalid && inputForm.controls.location.errors.required" style="color:red">
+      <p>Please tell us where you're located </p>
+    </div>
+  </div>
+  <div>
+    <h3>Please leave a contact number</h3>
+    
+    <textarea formControlName='contact' placeholder="Enter your phone number"></textarea>
+
+    <div *ngIf="inputForm.controls.contact.invalid && inputForm.controls.contact.errors.required" style="color:red">
+      <p>Please give us a contact phone number </p>
+    </div>
+    <button type="submit" [disabled]="!inputForm.valid || inputForm.untouched">Submit</button>
+  </div>
+
+</form>

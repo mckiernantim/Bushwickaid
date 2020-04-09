@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+<section>
+  <div class="container grey " *ngIf="this.feedState===0">
+      <div>
+        <h3>We currently have {{resourceCount}} resources available to the community</h3>
+      </div>
+  <div class="post-buttons">
+      <div>
+         
+        <button mat-raised-button style="background-color:#f68000" class="help-button" (click)="needResources()">I need Resources</button>
+        <h4>Need help over a long period?  Check our Resources list for things that may help</h4>
+      </div>
+      <div> <button mat-raised-button style="background-color: #01a6eb" class="help-button" (click)="haveResources()">I Have
+          Resources</button>
+        <h4>Making masks or giving out food?  List it here.</h4>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section>
+  <div class="container table-container grey" *ngIf="this.feedState===1" style="padding-bottom:0 !important">
+    <div>
+      <div>
+ 
+        <h3>We currently have {{resourceCount}} resources available to the community</h3>
+      </div>
+      <mat-form-field style="width:100%">
+        <mat-label>Serarch</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search the feed here">
+      </mat-form-field>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width:74%"> 
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="Resource">
+          <th mat-header-cell *matHeaderCellDef> Resource </th>
+          <td mat-cell *matCellDef="let resource"> {{resource.text}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="Time">
+          <th mat-header-cell *matHeaderCellDef> Time Available</th>
+          <td mat-cell *matCellDef="let resource"> {{resource.time}}  </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Location">
+          <th mat-header-cell *matHeaderCellDef> Location </th>
+          <td mat-cell *matCellDef="let resource"> {{resource.location}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Quantity">
+          <th mat-header-cell *matHeaderCellDef> Number Available</th>
+          <td mat-cell *matCellDef="let resource"> {{resource.quantity}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Available?">
+          <th mat-header-cell *matHeaderCellDef> Available?</th>
+          <td mat-cell *matCellDef="let resource"> {{resource.isAvailable}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Request">
+          <th mat-header-cell *matHeaderCellDef> Request</th>
+          <td mat-cell *matCellDef="let resource"> <button style="background-color:green" id={{resource.id}}
+              (click)="openDialog($event.target.id)">Request</button> </td>
+        </ng-container>
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+  <mat-paginator #paginator id="paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons class="paginator"></mat-paginator>
+</section>
+
+<section>
+  <div *ngIf="this.feedState===2"> 
+  <app-post-resource></app-post-resource>
+</div>
+</section>
+  

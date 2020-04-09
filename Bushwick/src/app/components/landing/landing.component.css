@@ -1,0 +1,8 @@
+.banner{
+    background-image: url(/assets/BMA.jpg);
+    
+    width: 100%;
+    height: 414px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

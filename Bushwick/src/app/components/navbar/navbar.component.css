@@ -1,0 +1,34 @@
+@media only screen and (max-width:400px ){
+    .banner{
+        height: 200px;
+        background-position-x: 99%;
+    }
+    .mobile{
+        display:block;
+        background-color: #f07f0f;;
+    }
+    .notMobile{
+        display:none;
+    }
+    }
+.border-bottom-oj{
+    border-bottom: 2px solid orange;
+    margin-top:-20px;
+    color:white;
+    padding:25px
+}
+
+.nav-links{
+    display: flex;
+  justify-content: flex-end;
+  width: 85%;
+  height:80px
+}
+.mat-toolbar{
+    height:90px !important;
+
+}
+.mobile-menu{
+    background-color: orange;
+    text-align: left;
+}

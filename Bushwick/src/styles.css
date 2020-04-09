@@ -1,0 +1,117 @@
+/* You can add global styles to this file, and also import other style files */
+
+html{
+    text-align: center;
+    margin: 0 auto;
+    
+}
+.container{
+    padding:2% 6% 10% 6%  ;
+}
+html, body { height: 100%; background-color: #c9c8c5; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-button-wrapper{
+    z-index: -1;
+}
+a{
+    color:white;
+    padding: 0px 10px 0px 10px;
+}
+a:hover{
+    color:#01abea
+}
+button:hover{
+    color:#c9c8c5
+}
+
+.content{
+    padding: 0 5% 0 5%
+}
+.table-container{
+ 
+    
+    display:grid;
+    grid-template-columns: 1fr ;
+    
+}
+.user-image{
+    widows: 100px;
+    height:100px;
+    border-radius: 50%;
+}
+
+table{
+    margin: 0 auto;
+    min-width:74%;
+    text-align: center;
+    background-color: #5d5c58!important;
+
+}
+ul, ol{
+    list-style-type: none;
+}
+thead{
+    color:white;
+}
+th{
+    text-align:center !important;
+    color: white !important
+}
+
+.banner{
+    background-image: url(/assets/BMA.jpg);
+    background-position-y: 50%;
+    width: 88%;
+    height: 414px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.orange{
+    background-color: #f07f0f;
+}
+.blue{
+    background-color: #01abea;
+}
+.grey{
+    background-color:#c9c8c5
+  
+}
+.dark-grey{
+   background-color: #5d5c58
+}
+.help-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+    padding: 3%;
+    margin: 0 17%;
+}
+.paginator{
+    opacity: 0;
+    width:65%;
+    margin: 0 auto;
+
+}
+
+  .mat-form-field-empty.mat-form-field-label {
+    color: white!important;
+}
+.mat-input-element {
+    caret-color: white !important;
+}
+
+.mat-form-field-ripple {
+    background-color: white !important;
+}
+.mat-focused .mat-form-field-label {
+    color: white !important;
+}
+
+.paginator-container{
+    
+    margin: 0 auto;
+
+}
+.mobile{
+    display:none
+}

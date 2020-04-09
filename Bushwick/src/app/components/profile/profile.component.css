@@ -1,0 +1,10 @@
+mat-label{
+    text-align: left !important;
+    padding:20px !important
+}
+
+.profile-container{
+display:grid;
+    grid-template-columns: 1fr ;
+    gap:2%;
+}

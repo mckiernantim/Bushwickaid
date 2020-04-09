@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>{{data.author}} needs help</h1>
+<div mat-dialog-content>
+  <h3>{{data.author}}: {{data.text}}</h3>
+  <p>we need this done by {{data.time}}</p>
+</div>
+<div mat-dialog-actions style="display:block !important;">
+  <div>
+    <p>if you can help - confirm below {{data.author}} will be notified</p>
+  </div>
+  <div>
+    <button id={{data.id}} (click)="onNoClick($event.target.id)">Ok</button>
+    <button style="background-color: green;" [mat-dialog-close]="data.animal" cdkFocusInitial>No Thanks</button>
+  </div>
+</div>

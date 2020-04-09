@@ -1,0 +1,18 @@
+.post-buttons{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding:5% 10% 10% 10%;
+}
+.help-button{
+    width:200px;
+    height:200px;
+
+    font-size: 1.2em;
+
+
+}
+.safety-list{
+    list-style: none;
+    line-height: 1.2em;
+}
+
